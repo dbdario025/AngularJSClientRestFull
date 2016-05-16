@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="panel-body">
+        <div class="list-group">            
+            <table class="table">                 
+                <tr>
+                    <th colspan="2"><center>Historial de Recargas</center></th>
+                </tr>
+                <tr>                         
+                    <th>Celular</th>
+                    <th>Valor</th>
+                    <th>Segundos</th>
+                    <th>Fecha</th>                        
+                </tr>                 
+                <tr ng-repeat="reload in reloads">
+                    <td>{{ reload.Mobile}}</td>
+                    <td>${{ reload.Value}}</td>                            
+                    <td>{{ reload.TotalSeconds}}</td>                            
+                    <td>{{ reload.ReloadDate}}</td>                            
+                </tr>
+            </table>         
+        </div>
+    </div>
+</div>

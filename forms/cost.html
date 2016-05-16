@@ -1,0 +1,19 @@
+<h1>{{$parent.settings.pageTitle}}</h1>
+
+<p ng-show="$parent.settings.success" class="alert alert-success">{{$parent.settings.success}}</p>
+
+<div class="required-field-block">
+    <input type="number" value="1000" min="0" step="0.01"
+           data-number-to-fixed="2" data-number-stepfactor="100" 
+           class="currency form-control" placeholder="Costo" ng-model="cost.Cost" />
+    <!--<input type="text" placeholder="Costo" ng-model="cost.Cost" class="form-control">-->
+    <div class="required-icon">
+        <div class="text">*</div>
+    </div>
+</div>
+
+<div class="required-field-block">
+    <input type="date" placeholder="Fecha" ng-model="cost.DateCost" class="form-control" required>
+</div>
+
+<button class="btn btn-primary" ng-click="submit($parent.cost)">{{$parent.settings.action}}</button>

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="panel-body">
+        <div class="list-group">
+            <table class="table">                 
+                <tr>
+                    <th colspan="2"><center>Historial de Consumo</center></th>
+                </tr>
+                <tr>                         
+                    <th>Segundos</th>
+                    <th>Fecha</th>                        
+                </tr>                 
+                <tr ng-repeat="consumption in consumptions">
+                    <td>{{ consumption.Seconds}}</td>
+                    <td>{{ consumption.ConsumptionDate}}</td>                            
+                </tr>
+            </table>         
+        </div>
+    </div>
+</div>

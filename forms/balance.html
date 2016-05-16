@@ -1,0 +1,15 @@
+<h1>{{$parent.settings.pageTitle}}</h1>
+
+<p ng-show="$parent.settings.success" class="alert alert-success">{{$parent.settings.success}}</p>
+
+<div class="required-field-block">
+    <select name="repeatSelect" id="repeatSelect" ng-model="reload.Id">
+      <option ng-repeat="option in reloads" value="{{reload.id}}">{{reload.Mobile}}</option>
+    </select>
+    <div class="required-icon">
+        <div class="text">*</div>
+    </div>
+</div>
+
+
+<button class="btn btn-primary" ng-click="submit($parent.reload)">{{$parent.settings.action}}</button>
