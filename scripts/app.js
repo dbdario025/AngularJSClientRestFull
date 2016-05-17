@@ -68,7 +68,7 @@ var app = angular.module("app", ["ngRoute", "ngResource"])
             }])
 
         .factory('Costs', ["$resource", function ($resource) {
-                return $resource("http://localhost:7180/codeigniter/costs/:id", {id: "@_id"}, {
+                return $resource("http://confeccioneslamilla.com/estebanprueba/cirest/index.php/costs/:id", {id: "@_id"}, {
                     update: {method: "PUT", params: {id: "@_id"}}
                 })
             }])
@@ -110,7 +110,7 @@ var app = angular.module("app", ["ngRoute", "ngResource"])
             }])
 
         .factory('Consumptions', ["$resource", function ($resource) {
-                return $resource("http://localhost:7180/codeigniter/consumptions/:id", {id: "@_id"}, {
+                return $resource("http://confeccioneslamilla.com/estebanprueba/cirest/index.php/consumptions/:id", {id: "@_id"}, {
                     update: {method: "PUT", params: {id: "@_id"}}
                 })
             }])
@@ -185,7 +185,7 @@ var app = angular.module("app", ["ngRoute", "ngResource"])
             }])
 
         .factory('Reloads', ["$resource", function ($resource) {
-                return $resource("http://localhost:7180/codeigniter/reloads/:id", {id: "@_id"}, {
+                return $resource("http://confeccioneslamilla.com/estebanprueba/cirest/index.php/reloads/:id", {id: "@_id"}, {
                     update: {method: "PUT", params: {id: "@_id"}}
                 })
             }])
@@ -201,18 +201,12 @@ var app = angular.module("app", ["ngRoute", "ngResource"])
                 Reloads.get(function (data) {
                     $scope.reloads = data.response;
                 });
-
-                $scope.reload = function (id) {
-                    Reloads.find_get({id: id}).$promise.then(function (data) {
-                        if (data.response) {
-                            $route.reload();
-                        }
-                    })
-                }            
+                
+                            
             }])
 
         .factory('Reloads', ["$resource", function ($resource) {
-                return $resource("http://localhost:7180/codeigniter/reloads/:id", {id: "@_id"}, {
+                return $resource("http://confeccioneslamilla.com/estebanprueba/cirest/index.php/reloads/:id", {id: "@_id"}, {
                     update: {method: "PUT", params: {id: "@_id"}}
                 });
             }]);

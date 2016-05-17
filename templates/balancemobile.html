@@ -2,9 +2,11 @@
     <div class="panel-body">
         <div class="list-group">
             <h4>Seleccione el Movil del cual desea saber el saldo</h4><br />
-            <select name="repeatSelect" id="repeatSelect" ng-model="reload.Id">
-            <option ng-repeat="reload in reloads" value="{{reload.id}}">{{reload.Mobile}}</option>
-          </select>
+            <select 
+                ng-model="reload.Id"                 
+                ng-options="option.Id as option.Mobile for option in reloads"
+                class="form-control">
+            </select>
             <br /><br /><br /><br />
             <table class="table">
                 <tr>
@@ -15,7 +17,7 @@
                     <th>Valor</th>
                     <th>Segundos</th>                                            
                 </tr>                 
-                <tr ng-repeat="reload in reloads">
+                <tr ng-repeat="reload in reloads | filter:reload">
                     <td>{{ reload.Mobile}}</td>
                     <td>${{ reload.Value}}</td>                            
                     <td>{{ reload.TotalSeconds}}</td>                    
